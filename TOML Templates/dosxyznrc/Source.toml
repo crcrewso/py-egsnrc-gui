@@ -1,0 +1,69 @@
+# TODO style guide for source type ordering
+
+[Source]
+# will look for Source.<isource> for definition
+isource = 0 # [int] Source number
+iqin = 0    # [int] Charge of the source particle 
+# -1 for electrons, 0 for photons, 1 for positrons, 2 for all particles
+
+
+[Source.0] # Parallel Rectangular beam incident from the front
+x_start = 0.0 # [cm] X plane lower limit
+x_end = 0.0   # [cm] X plane upper limit
+y_start = 0.0 # [cm] Y plane lower limit
+y_end = 0.0   # [cm] Y plane upper limit
+x_theta = 0.0 # [deg] Angle of the bean relative to x axis
+y_theta = 0.0 # [deg] Angle of the bean relative to y axis
+z_theta = 0.0 # [deg] Angle of the bean relative to z axis
+
+[Source.1] # Parallel Rectangular beam incident from any direction
+# TODO verify this source cannot handle asymetric jaws
+x_iso = 0.0   # [cm] X isocenter
+y_iso = 0.0   # [cm] Y isocenter
+z_iso = 0.0   # [cm] Z isocenter
+theta = 0.0   # [deg] Angle of the bean relative to z axis
+phi = 0.0     # [deg] Angle of the bean relative to x axis
+x_width = 0.0 # [cm] X width of the beam
+y_width = 0.0 # [cm] Y width of the beam
+phicol = 0.0  # [deg] Angle of the beam collimator
+
+[Source.2] # Phase Space Incident from any direction
+x_iso = 0.0        # [cm] X isocenter
+y_iso = 0.0        # [cm] Y isocenter
+z_iso = 0.0        # [cm] Z isocenter
+theta = 0.0        # [deg] Angle of the bean relative to z axis
+phi = 0.0          # [deg] Angle of the bean relative to x axis
+format = "egsphsp" # [str] Format of the phase space file (BEAMnrc egsphsp or IAEAphsp)
+dsource = 0        # [cm] Distance from the source to the isocenter
+# for BEAMnrc phase space files, this is the distance from the source center to the isocenter
+# for IAEA phase space files, this is the distance from the isocenter to the primary source, or SAD
+phicol = 0.0 # [deg] Angle of the beam collimator
+# TODO Is this parameter needed? 
+dbs_used = false                      # [bool] If true, the source is was generated using directional bremsstrahlung splitting 
+e_split = 0                           # [int] Number of times to split charged particles as soon as they enter the phantom geometry
+file = "phsp.egsphsp1"                # [str] The name (including extension) of the phase space file
+directory = "$EGS_HOME/BEAM_EX10MeVe" # [str] The directory containing the phase space file, can be relative to the EGS_HOME environment variable
+
+[Source.2.dbs] # If dbs is true this is present
+radius = 0.0 # [cm] Radius of the bremsstrahlung splitting cone
+ssd = 0.0    # [cm] Source to surface distance
+z = 0.0      # [cm] Z position of the BEAM Simulation used to generate the phase space
+
+
+[Source.3] # Point Source Incident from the front
+
+[Source.4] # Beam characterization model, particles incident from any direction 
+
+[Source.6] # Uniform isotropically radiating parallelepiped within DOSXYZnrc volume
+
+[Source.7] # Parallel rectangular beam incident from multiple angles
+
+[Source.8] # Phase-space source incident from multiple angles
+
+[Source.9] # Full BEAMnrc treatment head simulation as source
+
+[Source.10] # Full BEAMnrc treatment head simulation as source incident from multiple angles 
+
+[Source.20] # Phase space source incident from multiple angles, with multiple SSD’s and isocentres–options to run source through a shared library geometry
+
+[Source.21] # BEAM treatment head simulation incident from multiple angles

@@ -1,0 +1,11 @@
+[Source]
+# TODO find out what the possible source libraries are
+library = "egs_point_source" # [str] Source library 
+name = "point source"   # [str] Source name
+position = [0, 0, 0] # [cm] Source position [x, y, z]
+
+[Source.Spectrum]
+# TODO find out what the possible spectrum types are
+type = "monoenergetic" # [str] Spectrum type
+energy = 0.662 # [MeV] Energy of the source
+charge = 0 # [int] Charge of the source (0 for photons)
