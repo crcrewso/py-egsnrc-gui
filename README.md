@@ -1,6 +1,6 @@
 # py_egsnrc_gui
 
-EGSnrc &lt;-> YAML parser
+EGSnrc ⇄ YAML parser
 
 The goal of this repo is to create
 
